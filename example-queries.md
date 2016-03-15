@@ -1,4 +1,4 @@
-#### Example queries for Syriaca database
+#### Example queries for Syriaca database (access Stardog endpoint [here](http://dev-rdf.library.vanderbilt.edu/))
 
 _Some things to remember:_
 * Don't forget to add the necessary prefixes in Stardog - queries that use undefined language will return no results!
