@@ -6,7 +6,7 @@ _Some things to remember:_
 * Capitalization for query clauses (e.g. SELECT, WHERE, CONSTRUCT, etc.) is convention and not required.
 * For the sake of example, [Edessa](http://syriaca.org/place/78/html) has been used as the query subject. The same can be done for other resources in [Syriaca](syriaca.org).
 
-##### Basic query to find properties and values of database
+##### How to find properties and values of database:
 
 ```
 SELECT DISTINCT ?property ?value
@@ -16,7 +16,7 @@ WHERE {
 ```
 
 
-##### Query to find labels of all resources in database
+##### How to find labels of all resources in database:
 
 ```
 SELECT DISTINCT ?label
@@ -25,7 +25,7 @@ WHERE {
   }
 ```
 
-##### Query to find the description of a place
+##### How to find the description of a place:
 
 ```
 SELECT ?description
@@ -34,7 +34,7 @@ WHERE {
   }
 ```
 
-##### Query to find the name(s) of a place
+##### How to find the name(s) of a place:
 
 ```
 SELECT ?name
