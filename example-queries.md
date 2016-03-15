@@ -5,12 +5,12 @@
 `select ?property ?value
 where {
   ?s ?property ?value
-}`
+  }`
 
 
 ### Query to Find Names of All Resources in Database
 
-select distinct ?name
+`select distinct ?name
 where {
   ?s rdfs:label ?name
-}
+}`
