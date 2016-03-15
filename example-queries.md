@@ -15,12 +15,12 @@ WHERE {
 ```
 
 
-##### Query to find names of all resources in database
+##### Query to find labels of all resources in database
 
 ```
-SELECT DISTINCT ?name
+SELECT DISTINCT ?label
 WHERE {
-  ?s rdfs:label ?name`
+  ?s rdfs:label ?label
   }
 ```
 
@@ -30,6 +30,15 @@ WHERE {
 SELECT ?description
 WHERE {
   <http://syriaca.org/place/78> dcterms:description ?description
+  }
+```
+
+##### Query to find the name(s) of a place
+
+```
+SELECT ?name
+WHERE {
+  <http://syriaca.org/place/78> lawd:hasName ?name
   }
 ```
 
