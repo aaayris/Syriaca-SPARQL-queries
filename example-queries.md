@@ -2,7 +2,7 @@
 
 _Some things to remember:_
 * Don't forget to add the necessary prefixes in Stardog - queries that use undefined language will return no results!
-* URIs go between angle brackets (e.g. <http://syriaca.org/Places/78.html>).
+* URIs go between angle brackets (e.g. `<http://syriaca.org/Places/78.html>`).
 * Capitalization for query clauses (e.g. `SELECT`, `WHERE`, `CONSTRUCT`, etc.) is convention and not required.
 * For the sake of example, [Edessa](http://syriaca.org/place/78/html) has been used as the query subject (when specified). Other resources in [Syriaca](syriaca.org) can be used in the same way.
 * Adding or removing the `DISTINCT` clause will greatly affect the number of results.
