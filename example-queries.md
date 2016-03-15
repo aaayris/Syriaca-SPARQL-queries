@@ -1,6 +1,7 @@
 #### Example queries for Syriaca database
 
-_Don't forget to add the necessary prefixes in Stardog!_
+_Some things to remember:_
+* Don't forget to add the necessary prefixes in Stardog!
 
 ##### Basic query to find properties and values of database
 
