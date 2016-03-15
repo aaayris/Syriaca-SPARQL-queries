@@ -1,6 +1,6 @@
-##### Example queries for Syriaca database
+#### Example queries for Syriaca database
 
-###### Basic query to find properties and values of database
+##### Basic query to find properties and values of database
 
 ```
 SELECT DISTINCT ?property ?value
@@ -10,7 +10,7 @@ WHERE {
 ```
 
 
-###### Query to find names of all resources in database
+##### Query to find names of all resources in database
 
 ```
 SELECT DISTINCT ?name
@@ -19,7 +19,7 @@ WHERE {
   }
 ```
 
-##### Query to find the description of a place
+#### Query to find the description of a place
 
 ```
 SELECT ?description
