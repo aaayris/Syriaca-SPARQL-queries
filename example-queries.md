@@ -4,6 +4,7 @@ _Some things to remember:_
 * Don't forget to add the necessary prefixes in Stardog - queries that use undefined language will return no results!
 * URIs go between angle brackets (< >).
 * Capitalization for query clauses (e.g. SELECT, WHERE, CONSTRUCT, etc.) is convention and not required.
+* For the sake of example, [Edessa](http://syriaca.org/place/78/html) has been used as subject. The same can be done for other resources in [Syriaca](syriaca.org).
 
 ##### Basic query to find properties and values of database
 
