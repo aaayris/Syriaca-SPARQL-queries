@@ -77,4 +77,13 @@ WHERE {
   }
 ```
 
+##### Query for the date associated with a place:
+
+```
+SELECT ?date
+WHERE {
+  <http://syriaca.org/place/78> dcterms:temporal ?date
+  }
+```
+
 
