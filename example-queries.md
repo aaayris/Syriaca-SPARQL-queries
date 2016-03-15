@@ -3,8 +3,8 @@
 ###### Basic query to find properties and values of database
 
 ```
-select distinct ?property ?value
-where {
+SELECT DISTINCT ?property ?value
+WHERE {
   ?s ?property ?value
   }
 ```
@@ -13,8 +13,8 @@ where {
 ###### Query to find names of all resources in database
 
 ```
-select distinct ?name
-where {
+SELECT DISTINCT ?name
+WHERE {
   ?s rdfs:label ?name`
   }
 ```
