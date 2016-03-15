@@ -57,3 +57,24 @@ WHERE {
   }
 ```
 
+
+##### Query for the location of a place:
+
+```
+SELECT ?location
+WHERE {
+  <http://syriaca.org/place/78> geo:location ?location
+  }
+```
+
+
+##### Query for geographic relations:
+
+```
+SELECT ?partOf
+WHERE {
+  <http://syriaca.org/place/78> dcterms:isPartOf ?partOf
+  }
+```
+
+
