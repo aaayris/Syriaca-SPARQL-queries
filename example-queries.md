@@ -3,11 +3,8 @@
 ##### Basic Exploratory Query to Find Properties and Values of Database
 
 `select ?property ?value`
-
 `where {`
-
 `  ?s ?property ?value`
-  
 `  }`
 
 
