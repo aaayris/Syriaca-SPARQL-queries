@@ -18,3 +18,13 @@ WHERE {
   ?s rdfs:label ?name`
   }
 ```
+
+##### Query to find the description of a place
+
+```
+SELECT ?description
+WHERE {
+  <http://syriaca.org/place/78> dcterms:description ?description
+  }
+```
+
