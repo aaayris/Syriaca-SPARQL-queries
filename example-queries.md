@@ -6,7 +6,7 @@ _Some things to remember:_
 * Capitalization for query clauses (e.g. `SELECT`, `WHERE`, `CONSTRUCT`, etc.) is convention and _not_ required.
 * For the sake of example, [Edessa](http://syriaca.org/place/78/html) has been used as the query subject (when specified). Other resources in [Syriaca](syriaca.org) can be used in the same way.
 * Adding or removing the `DISTINCT` clause will greatly affect the number of results.
-* Question words (e.g. `?where`) are arbitrary and therefore meaningless. They are simply meant to assist the human reader. The question mark (`?`) is what matters to the machine. You could - for example - use `?waffles` to query for `rdfs:label`.
+* Question words - or "variables" - (e.g. `?where`) are arbitrary and therefore meaningless. They are simply meant to assist the human reader. The question mark (`?`) is what matters to the machine. You could - for example - use `?waffles` to query for `rdfs:label`.
 
 ##### Query for the properties and values of the database:
 
