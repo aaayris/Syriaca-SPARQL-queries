@@ -1,7 +1,9 @@
 #### Example queries for Syriaca database
 
 _Some things to remember:_
-* Don't forget to add the necessary prefixes in Stardog!
+* Don't forget to add the necessary prefixes in Stardog - queries that use undefined language will return no results!
+* URIs go between angle brackets (< >).
+* 
 
 ##### Basic query to find properties and values of database
 
