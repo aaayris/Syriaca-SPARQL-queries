@@ -3,7 +3,7 @@
 _Some things to remember:_
 * Don't forget to add the necessary prefixes in Stardog - queries that use undefined language will return no results!
 * URIs go between angle brackets (< >).
-* 
+* Capitalization for query clauses (e.g. SELECT, WHERE, CONSTRUCT, etc.) is convention and not required.
 
 ##### Basic query to find properties and values of database
 
@@ -24,7 +24,7 @@ WHERE {
   }
 ```
 
-#### Query to find the description of a place
+##### Query to find the description of a place
 
 ```
 SELECT ?description
