@@ -3,7 +3,7 @@
 ##### Basic Exploratory Query to Find Properties and Values of Database
 
 ```
-select ?property ?value
+select distinct ?property ?value
 where {
   ?s ?property ?value
   }
@@ -12,10 +12,9 @@ where {
 
 ##### Query to Find Names of All Resources in Database
 
-`select distinct ?name`
-
-`where {`
-
-`  ?s rdfs:label ?name`
-
-`}`
+```
+select distinct ?name
+where {
+  ?s rdfs:label ?name`
+  }
+```
