@@ -1,4 +1,4 @@
-= Example queries for Syriaca database
+# Example queries for Syriaca database
 
 # Basic Exploratory Query to Find Properties and Values of Database
 select ?property ?value
@@ -12,3 +12,4 @@ select distinct ?name
 where {
   ?s rdfs:label ?name
 }
+
