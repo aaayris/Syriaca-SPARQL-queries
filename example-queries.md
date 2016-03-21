@@ -78,6 +78,7 @@ WHERE {
   }
 ```
 
+
 ##### Query for the date associated with a place:
 
 ```
@@ -88,3 +89,12 @@ WHERE {
 ```
 
 
+##### Query for related places:
+
+```
+SELECT DISTINCT ?name ?related
+WHERE {
+  ?s rdfs:label ?name .
+  ?s dcterms:relation ?related .
+  }
+```
