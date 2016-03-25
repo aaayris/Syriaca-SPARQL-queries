@@ -115,6 +115,5 @@ UNION
     dcterms:isPartOf ?partOf .
     ?partOf rdfs:label ?partOfName . }
 }
-
-> NOTE: When this query is run on the data, Edessa (place 78) is the only resource with dcterms:isPartOf in its definition; no other place is currently defined with the same namespace. <
 ```
+> NOTE: When this query is run on the data, Edessa (place 78) is the only resource with dcterms:isPartOf in its definition; no other place is currently defined with the same namespace.
