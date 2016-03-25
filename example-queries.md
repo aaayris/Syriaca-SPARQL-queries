@@ -98,3 +98,21 @@ WHERE {
   ?s dcterms:relation ?related .
   }
 ```
+
+
+##### Query for only places that are related or a part of another place:
+
+```
+SELECT DISTINCT *
+WHERE {
+  { ?s a lawd:Place ;
+    rdfs:label ?label ;
+    dcterms:relation ?rel .
+  ?rel rdfs:label ?relName . }
+UNION 
+  { ?s a lawd:Place ;
+    rdfs:label ?label ;
+    dcterms:isPartOf ?partOf .
+    ?partOf rdfs:label ?partOfName . }
+}
+```
