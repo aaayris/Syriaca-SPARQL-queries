@@ -119,11 +119,11 @@ ASK {
   <http://syriaca.org/place/78> dcterms:date ?o .
 }
 ```
-> This will return `false` since `dcterms:date is not used with `<http://syriaca.org/place/78>`. However, if you run the same query with a different namespace...
+> This will return `false` since `dcterms:date` is not used with `<http://syriaca.org/place/78>`. However, if you run the same query with a different namespace...
 
 ```
 ASK {
   <http://syriaca.org/place/78> dcterms:description ?o .
 }
 ```
-> ...this returns `true` as `dcterms:description` is used in the data for Edessa (place 78), wheras `dcterms:date` is not.
+> ...this returns `true` as `dcterms:description` is used in the data for Edessa (place 78), whereas `dcterms:date` is not.
