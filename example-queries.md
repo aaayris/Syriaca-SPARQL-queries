@@ -126,4 +126,4 @@ ASK {
   <http://syriaca.org/place/78> dcterms:description ?o .
 }
 ```
-> ...this returns `true` as `dcterms:description` is used in the data for Edessa (place 78), whereas `dcterms:date` is not.
+> ...this returns `true` because `dcterms:description` is used in the data for Edessa (place 78), whereas `dcterms:date` is not.
