@@ -9,6 +9,7 @@ _Some things to remember:_
 * Queries that are well formed but don't match any data will return empty (i.e. blank); there is no "no results" in SPARQL.
 * Variables in SPARQL (e.g. `?where`) are arbitrary and therefore meaningless. They are simply meant to assist the human reader. The question mark (`?`) is what matters to the machine. You could - for example - use `?waffles` to query for `rdfs:label`.
 * Any query for data about a specific place can easily be transformed into a query about all places (and vice versa) simply by swapping out the URI (e.g. `<http://syriaca.org/place/78>` for a variable (e.g. `?s`).
+* `ASK` queries are a helpful way to explore what's in an unfamiliar dataset.
 
 ##### Query for properties and values:
 
@@ -109,3 +110,19 @@ UNION
 }
 ```
 > NOTE: When this query is run on the data, Edessa (place 78) is the only resource with dcterms:isPartOf in its definition; no other place is currently defined with the same namespace.
+
+
+
+```
+ASK {
+  <http://syriaca.org/place/78> dcterms:date ?o .
+}
+```
+> This will return `false` since `dcterms:date is not used with `<http://syriaca.org/place/78>`. However, if you run the same query with a different namespace...
+
+```
+ASK {
+  <http://syriaca.org/place/78> dcterms:description ?o .
+}
+```
+> ...this returns `true` as `dcterms:description` is used in the data for Edessa (place 78), wheras `dcterms:date` is not.
