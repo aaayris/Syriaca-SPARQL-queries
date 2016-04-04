@@ -8,6 +8,7 @@ _Some things to remember:_
 * Adding or removing the `DISTINCT` clause will greatly affect the number of results.
 * Queries that are well formed but don't match any data will return empty (i.e. blank); there is no "no results" in SPARQL.
 * Variables in SPARQL (e.g. `?where`) are arbitrary and therefore meaningless. They are simply meant to assist the human reader. The question mark (`?`) is what matters to the machine. You could - for example - use `?waffles` to query for `rdfs:label`.
+* Any query for a specific place can easily be for all places (and vice versa) simply by swapping out the URI for a variable (e.g. ?s).
 
 ##### Query for the properties and values of the database:
 
@@ -19,35 +20,14 @@ WHERE {
 ```
 
 
-##### Query for the labels of all resources in the database:
+##### Query for the English labels of a place:
 
 ```
 SELECT DISTINCT ?label
 WHERE {
-  ?s rdfs:label ?label .
-  }
-```
-
-
-##### Query for the English labels of all resources in the database:
-
-```
-SELECT DISTINCT ?label
-WHERE {
-  ?s rdfs:label ?label .
+  <http://syriaca.org/place/78> rdfs:label ?label .
   FILTER (lang(?label)="en")
 }
-```
-
-
-
-##### Query for the description of every place in the database:
-
-```
-SELECT ?place ?description
-WHERE {
-  ?place dcterms:description ?description
-  }
 ```
 
 
