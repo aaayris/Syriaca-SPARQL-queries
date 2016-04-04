@@ -113,6 +113,7 @@ UNION
 
 
 
+##### Using `ASK` queries to explore the dataset:
 ```
 ASK {
   <http://syriaca.org/place/78> dcterms:date ?o .
