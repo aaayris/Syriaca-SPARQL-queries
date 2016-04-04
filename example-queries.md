@@ -24,9 +24,21 @@ WHERE {
 ```
 SELECT DISTINCT ?label
 WHERE {
-  ?s rdfs:label ?label
+  ?s rdfs:label ?label .
   }
 ```
+
+
+##### Query for the English labels of all resources in the database:
+
+```
+SELECT DISTINCT ?label
+WHERE {
+  ?s rdfs:label ?label .
+  FILTER (lang(?label)="en")
+}
+```
+
 
 
 ##### Query for the description of every place in the database:
