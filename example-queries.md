@@ -12,12 +12,12 @@ _Some things to remember:_
 
 ##### Query for the properties and values of the database:
 
-`
+```
 SELECT DISTINCT ?property ?value
 WHERE {
   ?s ?property ?value
   }
-`
+```
 
 
 ##### Query for the English labels of a place:
