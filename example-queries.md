@@ -10,7 +10,7 @@ _Some things to remember:_
 * Variables in SPARQL (e.g. `?where`) are arbitrary and therefore meaningless. They are simply meant to assist the human reader. The question mark (`?`) is what matters to the machine. You could - for example - use `?waffles` to query for `rdfs:label`.
 * Any query for data about a specific place can easily be transformed into a query about all places (and vice versa) simply by swapping out the URI (e.g. `<http://syriaca.org/place/78>` for a variable (e.g. `?s`).
 
-##### Query for the properties and values of the database:
+##### Query for properties and values:
 
 ```
 SELECT DISTINCT ?property ?value
@@ -20,7 +20,7 @@ WHERE {
 ```
 
 
-##### Query for the English labels of a place:
+##### Query for the English labels:
 
 ```
 SELECT DISTINCT ?label
@@ -31,7 +31,7 @@ WHERE {
 ```
 
 
-##### Query for the description of a specific place:
+##### Query for a place description:
 
 ```
 SELECT ?description
@@ -41,7 +41,7 @@ WHERE {
 ```
 
 
-##### Query for the name(s) of a place:
+##### Query for place name(s):
 
 ```
 SELECT ?name
@@ -51,7 +51,7 @@ WHERE {
 ```
 
 
-##### Query for the location of a place:
+##### Query for place location:
 
 ```
 SELECT ?location
@@ -61,7 +61,7 @@ WHERE {
 ```
 
 
-##### Query for geographic relations:
+##### Query for geographic hierarchy:
 
 ```
 SELECT ?partOf
@@ -71,7 +71,7 @@ WHERE {
 ```
 
 
-##### Query for the date associated with a place:
+##### Query for the date(s) associated with a place:
 
 ```
 SELECT ?date
