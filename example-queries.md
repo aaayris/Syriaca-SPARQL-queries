@@ -127,3 +127,15 @@ ASK {
 }
 ```
 > ...this returns `true` because `dcterms:description` is used in the data for Edessa (place 78), whereas `dcterms:date` is not.
+
+
+##### Query for the latitude and longitude of places:
+```
+SELECT DISTINCT *
+WHERE {
+  ?s a lawd:place ;
+    rdfs:label ?label ;
+    geo:location/geo:lat ?lat ;
+    geo:location/geo:long ?long .
+}
+```
