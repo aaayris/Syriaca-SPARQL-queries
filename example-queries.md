@@ -21,7 +21,7 @@ WHERE {
 ```
 
 
-##### Query for the English labels:
+##### Query for the English label of a place:
 
 ```
 SELECT DISTINCT ?label
@@ -42,7 +42,7 @@ WHERE {
 ```
 
 
-##### Query for place name(s):
+##### Query for a place name:
 
 ```
 SELECT ?name
@@ -127,6 +127,7 @@ ASK {
 }
 ```
 > ...this returns `true` because `dcterms:description` is used in the data for Edessa (place 78), whereas `dcterms:date` is not.
+
 
 
 ##### Query for the latitude and longitude of places:
