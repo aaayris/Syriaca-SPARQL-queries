@@ -93,6 +93,18 @@ WHERE {
 ```
 
 
+##### Query for related places and their names:
+```
+SELECT DISTINCT ?place ?placeName ?related ?relName
+WHERE {
+  ?place a lawd:Place ;
+    rdfs:label ?placeName ;
+    dcterms:relation ?related .
+  ?related rdfs:label ?relName .
+}
+```
+
+
 ##### Query for only places that are related or a part of another place:
 
 ```
@@ -109,8 +121,6 @@ UNION
     ?partOf rdfs:label ?partOfName . }
 }
 ```
-> NOTE: When this query is run on the data, Edessa (place 78) is the only resource with dcterms:isPartOf in its definition; no other place is currently defined with the same namespace.
-
 
 
 ##### Using `ASK` queries to explore the dataset:
