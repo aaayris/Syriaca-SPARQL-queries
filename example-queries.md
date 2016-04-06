@@ -82,17 +82,6 @@ WHERE {
 ```
 
 
-##### Query for related places:
-
-```
-SELECT DISTINCT ?name ?related
-WHERE {
-  ?s rdfs:label ?name .
-  ?s dcterms:relation ?related .
-  }
-```
-
-
 ##### Query for related places and their names:
 ```
 SELECT DISTINCT ?place ?placeName ?related ?relName
