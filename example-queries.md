@@ -140,15 +140,3 @@ WHERE {
     geo:location/geo:long ?long .
 }
 ```
-
-##### Query for all the names of a place:
-```
-SELECT DISTINCT *
-WHERE {
-  ?s a lawd:Place ;
-    rdfs:label ?label ;
-    lawd:hasName ?name ;
-    lawd:hasName/lawd:primaryForm ?primary ;
-    lawd:hasName/lawd:variantForm ?variant .
-}
-```
