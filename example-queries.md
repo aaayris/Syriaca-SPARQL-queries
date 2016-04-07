@@ -28,7 +28,7 @@ SELECT DISTINCT ?label
 WHERE {
   <http://syriaca.org/place/78> rdfs:label ?label .
   FILTER (lang(?label)="en")
-}
+  }
 ```
 
 
@@ -81,6 +81,13 @@ WHERE {
   }
 ```
 
+##### Query for a place's relations and their names:
+```
+SELECT DISTINCT ?related ?relName
+WHERE {
+  <http://syriaca.org/place/78> skos:related ?related .
+  ?related rdfs:label ?relName .
+  }
 
 ##### Query for related places and their names:
 ```
@@ -90,7 +97,7 @@ WHERE {
     rdfs:label ?placeName ;
     dcterms:relation ?related .
   ?related rdfs:label ?relName .
-}
+  }
 ```
 
 
@@ -108,22 +115,22 @@ UNION
     rdfs:label ?label ;
     dcterms:isPartOf ?partOf .
     ?partOf rdfs:label ?partOfName . }
-}
+  }
 ```
-
+> NOTE: dcterms:relation and skos:related are different terms with different purposes - skos:related for things that are related in some broad sense, dcterms:relation for things that are related by name.
 
 ##### Using `ASK` queries to explore the dataset:
 ```
 ASK {
   <http://syriaca.org/place/78> dcterms:date ?o .
-}
+  }
 ```
 > This will return `false` since `dcterms:date` is not used with `<http://syriaca.org/place/78>`. However, if you run the same query with a different namespace...
 
 ```
 ASK {
   <http://syriaca.org/place/78> dcterms:description ?o .
-}
+  }
 ```
 > ...this returns `true` because `dcterms:description` is used in the data for Edessa (place 78), whereas `dcterms:date` is not.
 
@@ -137,5 +144,5 @@ WHERE {
     rdfs:label ?label ;
     geo:location/geo:lat ?lat ;
     geo:location/geo:long ?long .
-}
+  }
 ```
