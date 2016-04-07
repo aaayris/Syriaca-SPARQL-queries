@@ -82,12 +82,15 @@ WHERE {
 ```
 
 ##### Query for a place's relations and their names:
+
 ```
 SELECT DISTINCT ?related ?relName
 WHERE {
   <http://syriaca.org/place/78> skos:related ?related .
   ?related rdfs:label ?relName .
   }
+```
+
 
 ##### Query for related places and their names:
 ```
