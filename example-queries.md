@@ -15,7 +15,7 @@ _Some things to remember:_
 ```
 SELECT DISTINCT ?property ?value
 WHERE {
-  ?s ?property ?value
+  ?s ?property ?value .
   }
 ```
 
