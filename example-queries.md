@@ -12,7 +12,6 @@ _Some things to remember:_
 * `ASK` queries are a helpful way to explore what's in an unfamiliar dataset. However, they simply return either `true` or `false` depending on if the requested data is in the dataset; it does not say how many, where, or what kind are used.
 
 ##### Query for properties and values:
-
 ```
 SELECT DISTINCT ?property ?value
 WHERE {
@@ -22,7 +21,6 @@ WHERE {
 
 
 ##### Query for the English label of a place:
-
 ```
 SELECT DISTINCT ?label
 WHERE {
@@ -33,7 +31,6 @@ WHERE {
 
 
 ##### Query for a place description:
-
 ```
 SELECT ?description
 WHERE {
@@ -43,7 +40,6 @@ WHERE {
 
 
 ##### Query for a place name:
-
 ```
 SELECT ?name
 WHERE {
@@ -53,7 +49,6 @@ WHERE {
 
 
 ##### Query for place location:
-
 ```
 SELECT ?location
 WHERE {
@@ -63,7 +58,6 @@ WHERE {
 
 
 ##### Query for geographic hierarchy:
-
 ```
 SELECT ?partOf
 WHERE {
@@ -73,7 +67,6 @@ WHERE {
 
 
 ##### Query for the date(s) associated with a place:
-
 ```
 SELECT ?date
 WHERE {
@@ -133,9 +126,7 @@ OPTIONAL { <http://syriaca.org/place/1259> lawd:hasName/lawd:variantForm ?varian
 > Place 1259 (Hālānā) was used because it does not have `lawd:variantForm` in its data.
 
 
-
 ##### Query for only places that are related or a part of another place:
-
 ```
 SELECT DISTINCT *
 WHERE {
@@ -152,6 +143,7 @@ UNION
 ```
 > NOTE: dcterms:relation and skos:related are different terms with different purposes - skos:related for things that are related in some broad sense, dcterms:relation for things that are related by name.
 
+
 ##### Using `ASK` queries to explore the dataset:
 ```
 ASK {
@@ -159,14 +151,12 @@ ASK {
   }
 ```
 > This will return `false` since `dcterms:date` is not used with `<http://syriaca.org/place/78>`. However, if you run the same query with a different namespace...
-
 ```
 ASK {
   <http://syriaca.org/place/78> dcterms:description ?o .
   }
 ```
 > ...this returns `true` because `dcterms:description` is used in the data for Edessa (place 78), whereas `dcterms:date` is not.
-
 
 
 ##### Query for the latitude and longitude of places:
