@@ -80,6 +80,7 @@ WHERE {
   <http://syriaca.org/place/78> dcterms:temporal ?date
   }
 ```
+
 > The result is `"-0304"`. We can use that to ask for places that have dates earlier than Edessa:
 
 ```
@@ -88,10 +89,12 @@ WHERE {
   ?place a lawd:Place ;
     rdfs:label ?placeName .
   ?place dcterms:temporal ?date .
+  FILTER ( ?date > "-0304")
   }
 ORDER BY ?date
 ```
 > To find places with dates later than Edessa, simply invert the "greater than" (`>`) sign.
+
 
 ##### Query for a place's relations and their names:
 
