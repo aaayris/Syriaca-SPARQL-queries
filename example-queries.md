@@ -81,7 +81,7 @@ WHERE {
   }
 ```
 
-> The result is `"-0304"`. We can use that to ask for places that have dates earlier than Edessa:
+> The result is `"-0304"` (i.e. 304 BCE). We can use that to ask for places that have dates earlier than Edessa:
 
 ```
 SELECT ?place ?placeName ?date
