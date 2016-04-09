@@ -2,14 +2,14 @@
 
 _Some things to remember:_
 * Don't forget to add the necessary prefixes in Stardog - queries that use undefined language will return no results!
-* URIs go between angle brackets (e.g. `<http://syriaca.org/Places/78>`).
+* URIs go between angle brackets (e.g. `<http://syriaca.org/place/78>`).
 * Capitalization for query clauses (e.g. `SELECT`, `WHERE`, `CONSTRUCT`, etc.) is convention and _not_ required.
-* For the sake of example, [Edessa](http://syriaca.org/place/78/html) has been used as the query subject (when specified). Other resources in [Syriaca](syriaca.org) can be used in the same way.
 * Adding or removing the `DISTINCT` clause can greatly affect the number of results.
-* Queries that are well formed but don't match any data will return empty (i.e. blank); there is no "no results" in SPARQL.
-* Variables in SPARQL (e.g. `?where`) are arbitrary and therefore meaningless to the machine. They are simply meant to assist the human reader. The question mark (`?`) is what matters to the machine. You could - for example - use `?waffles` to query for `rdfs:label`.
+* Queries that are well formed but don't match any data will return empty (i.e. blank); there is no "no results" in SPARQL. (See "Query with optional bindings" below.)
+* Variables in SPARQL (e.g. `?WHERE`) are arbitrary and therefore meaningless to the machine. They are simply meant to assist the human reader. The question mark (`?`) is what matters to the machine. You could - for example - use `?WAFFLES` to query for `rdfs:label`.
 * Any query for data about a specific place can easily be transformed into a query about all places (and vice versa) simply by swapping out the URI (e.g. `<http://syriaca.org/place/78>`) for a variable (e.g. `?s`).
-* `ASK` queries are a helpful way to explore what's in an unfamiliar dataset. However, they simply return either `true` or `false` depending on if the requested data is in the dataset; it does not say how many, where, or what kind are used.
+* An `ASK` query is a helpful way to explore what's in an unfamiliar dataset. However, it simply returns either `true` or `false` depending on if the requested data is in the dataset; it does not say how many, where, or what kind are used.
+
 
 ##### Query for properties and values:
 ```
@@ -111,12 +111,12 @@ WHERE {
   }
 ```
 
-##### Query for optional bindings:
+##### Query with optional bindings:
 ```
 SELECT DISTINCT ?label ?name ?primaryName ?variantName
 WHERE { {
   <http://syriaca.org/place/1259> rdfs:label ?label ;
-                                  lawd:hasName ?name
+                                  lawd:hasName ?name ;
                                   lawd:hasName/lawd:primaryForm ?primary .
   }
 OPTIONAL { <http://syriaca.org/place/1259> lawd:hasName/lawd:variantForm ?variant . }
@@ -126,7 +126,7 @@ OPTIONAL { <http://syriaca.org/place/1259> lawd:hasName/lawd:variantForm ?varian
 > Place 1259 (Hālānā) was used because it does not have `lawd:variantForm` in its data.
 
 
-##### Query for only places that are related or a part of another place:
+##### Query only for places that are related or a part of another place:
 ```
 SELECT DISTINCT *
 WHERE {
@@ -141,7 +141,7 @@ UNION
     ?partOf rdfs:label ?partOfName . }
   }
 ```
-> NOTE: dcterms:relation and skos:related are different terms with different purposes - skos:related for things that are related in some broad sense, dcterms:relation for things that are related by name.
+> NOTE: `dcterms:relation` and `skos:related` are different terms with different purposes - `skos:related` for things that are related in some broad sense, `dcterms:relation` for things that are related by name.
 
 
 ##### Using `ASK` queries to explore the dataset:
