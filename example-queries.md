@@ -118,6 +118,21 @@ WHERE {
   }
 ```
 
+##### Query for optional bindings:
+```
+SELECT DISTINCT ?label ?name ?primaryName ?variantName
+WHERE { {
+  <http://syriaca.org/place/1259> rdfs:label ?label ;
+                                  lawd:hasName ?name
+                                  lawd:hasName/lawd:primaryForm ?primary .
+  }
+OPTIONAL { <http://syriaca.org/place/1259> lawd:hasName/lawd:variantForm ?variant . }
+  }
+```
+> `OPTIONAL` binding means that the query will not be invalidated if there is no match.
+> Place 1259 (Hālānā) was used because it does not have `lawd:variantForm` in its data.
+
+
 
 ##### Query for only places that are related or a part of another place:
 
