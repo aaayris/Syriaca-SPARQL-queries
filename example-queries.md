@@ -20,16 +20,6 @@ WHERE {
 ```
 
 
-##### Query for the English label of a place:
-```
-SELECT DISTINCT ?label
-WHERE {
-  <http://syriaca.org/place/78> rdfs:label ?label .
-  FILTER (lang(?label)="en")
-  }
-```
-
-
 ##### Query for a place description:
 ```
 SELECT ?description
