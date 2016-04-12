@@ -58,27 +58,16 @@ WHERE {
 ```
 
 
-##### Query for the date(s) associated with a place:
+##### Query for the latitude and longitude of places:
 ```
-SELECT ?date
+SELECT DISTINCT *
 WHERE {
-  <http://syriaca.org/place/78> dcterms:temporal ?date
+  ?s a lawd:place ;
+    rdfs:label ?label ;
+    geo:location/geo:lat ?lat ;
+    geo:location/geo:long ?long .
   }
 ```
-
-> The result is `"-0304"` (i.e. 304 BCE). We can use that to ask for places that have dates earlier than Edessa:
-
-```
-SELECT ?place ?placeName ?date
-WHERE {
-  ?place a lawd:Place ;
-    rdfs:label ?placeName .
-  ?place dcterms:temporal ?date .
-  FILTER ( ?date > "-0304")
-  }
-ORDER BY ?date
-```
-> To find places with dates later than Edessa, simply invert the "greater than" (`>`) sign.
 
 
 ##### Query for a place's relations and their names:
@@ -156,13 +145,37 @@ ASK {
 > ...this returns `true` because `dcterms:description` is used in the data for Edessa (place 78), whereas `dcterms:date` is not.
 
 
-##### Query for the latitude and longitude of places:
+##### Query for the date(s) associated with a place:
 ```
-SELECT DISTINCT *
+SELECT ?date
 WHERE {
-  ?s a lawd:place ;
-    rdfs:label ?label ;
-    geo:location/geo:lat ?lat ;
-    geo:location/geo:long ?long .
+  <http://syriaca.org/place/78> dcterms:temporal ?date
   }
 ```
+
+> The result is `"-0304"` (i.e. 304 BCE). We can use that to ask for places that have dates earlier than Edessa:
+
+```
+SELECT ?place ?placeName ?date
+WHERE {
+  ?place a lawd:Place ;
+    rdfs:label ?placeName .
+  ?place dcterms:temporal ?date .
+  FILTER ( ?date > "-0304")
+  }
+ORDER BY ?date
+```
+> To find places with dates later than Edessa, simply invert the "greater than" (`>`) sign.
+> To search for places between a certain date and by most recent, simply add another `FILTER` and add `ORDER BY DESC` (don't forget parentheses `( )` around `?date`.
+```
+SELECT ?place ?placeName ?date
+WHERE {
+  ?place a lawd:Place ;
+    rdfs:label ?placeName .
+  ?place dcterms:temporal ?date .
+  FILTER ( ?date > "-0304")
+  FILTER ( ?date < "0600")
+  }
+ORDER BY DESC (?date)
+```
+
