@@ -94,13 +94,18 @@ WHERE {
 
 ##### Query for related places and their names:
 ```
-SELECT DISTINCT ?place ?placeName ?related ?relName
+SELECT DISTINCT *
 WHERE {
   ?place a lawd:Place ;
-    rdfs:label ?placeName ;
-    dcterms:relation ?related .
-  ?related rdfs:label ?relName .
+    rdfs:label ?name ;
+    skos:related ?related ;
+    dcterms:relation ?relation ;
+    dcterms:isPartOf ?isPartOf .
+  ?related rdfs:label ?relatedName .
+  ?relation rdfs:label ?relationName .
+  ?isPartOf rdfs:label ?isPartOfName .
   }
+ORDER BY ?name
 ```
 
 ##### Query with optional bindings:
