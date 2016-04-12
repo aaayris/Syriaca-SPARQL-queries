@@ -29,12 +29,12 @@ WHERE {
 ```
 
 
-##### Query for all place names in the data (in alphabetical order):
+##### Query for all place URIs and place names in the data (in alphabetical order):
 ```
-SELECT ?name
+SELECT ?place ?name
 WHERE {
-  <http://syriaca.org/place/78> a lawd:Place ;
-                            rdfs:label ?name .
+  ?place a lawd:Place ;
+        rdfs:label ?name .
   }
 ORDER BY ?name
 ```
