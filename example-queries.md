@@ -167,6 +167,7 @@ ORDER BY ?date
 ```
 > To find places with dates later than Edessa, simply invert the "greater than" (`>`) sign.
 > To search for places between a certain date and by most recent, simply add another `FILTER` and add `ORDER BY DESC` (don't forget parentheses `( )` around `?date`).
+
 ```
 SELECT ?place ?placeName ?date
 WHERE {
