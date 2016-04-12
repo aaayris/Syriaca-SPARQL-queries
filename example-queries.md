@@ -92,7 +92,7 @@ WHERE {
 ```
 
 
-##### Query for related places and their names:
+##### Query for all related places and their names:
 ```
 SELECT DISTINCT *
 WHERE {
