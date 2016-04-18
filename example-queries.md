@@ -49,7 +49,7 @@ WHERE {
 ```
 
 
-##### Query for geographic hierarchy:
+##### Query for place names and their geographic hierarchy:
 ```
 SELECT ?place ?placeName ?partOf ?partOfName
 WHERE {
