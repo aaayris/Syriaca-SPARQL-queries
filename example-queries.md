@@ -64,7 +64,7 @@ WHERE {
 ```
 SELECT DISTINCT ?place ?label ?lat ?long
 WHERE {
-  ?place a lawd:place ;
+  ?place a lawd:Place ;
     rdfs:label ?label ;
     geo:location/geo:lat ?lat ;
     geo:location/geo:long ?long .
@@ -102,7 +102,7 @@ ORDER BY ?name
 
 ##### Query with optional bindings:
 ```
-SELECT DISTINCT ?label ?name ?primaryName ?variantName
+SELECT DISTINCT ?label ?name ?primary ?variant
 WHERE { {
   <http://syriaca.org/place/1259> rdfs:label ?label ;
                                   lawd:hasName ?name ;
