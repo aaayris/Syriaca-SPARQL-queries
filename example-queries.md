@@ -33,8 +33,7 @@ WHERE {
 ```
 SELECT ?place ?name
 WHERE {
-  ?place a lawd:Place ;
-        rdfs:label ?name .
+  ?place rdfs:label ?name .
   }
 ORDER BY ?name
 ```
