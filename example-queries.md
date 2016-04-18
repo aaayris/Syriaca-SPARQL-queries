@@ -125,14 +125,14 @@ UNION
 ##### Using `ASK` queries to explore the dataset:
 ```
 ASK {
-  <http://syriaca.org/place/78> dcterms:date ?o .
+  ?s dcterms:date ?o .
   }
 ```
 > This will return `false` since `dcterms:date` is not used with `<http://syriaca.org/place/78>`. However, if you run the same query with a different namespace . . .
 
 ```
 ASK {
-  <http://syriaca.org/place/78> dcterms:description ?o .
+  ?s dcterms:description ?o .
   }
 ```
 > . . . this returns `true` because `dcterms:description` is used in the data for Edessa (place 78), whereas `dcterms:date` is not.
