@@ -40,15 +40,6 @@ ORDER BY ?name
 ```
 
 
-##### Query for place location:
-```
-SELECT ?location
-WHERE {
-  <http://syriaca.org/place/78> geo:location ?location
-  }
-```
-
-
 ##### Query for place names and their geographic hierarchy:
 ```
 SELECT ?place ?placeName ?partOf ?partOfName
