@@ -137,6 +137,7 @@ ASK {
   }
 ```
 > This will return `false` since `dcterms:date` is not used with `<http://syriaca.org/place/78>`. However, if you run the same query with a different namespace...
+
 ```
 ASK {
   <http://syriaca.org/place/78> dcterms:description ?o .
