@@ -62,13 +62,14 @@ WHERE {
 
 ##### Query for the latitude and longitude of places:
 ```
-SELECT DISTINCT *
+SELECT DISTINCT ?place ?label ?lat ?long
 WHERE {
-  ?s a lawd:place ;
+  ?place a lawd:place ;
     rdfs:label ?label ;
     geo:location/geo:lat ?lat ;
     geo:location/geo:long ?long .
   }
+ORDER BY ?label
 ```
 
 
