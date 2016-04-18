@@ -51,9 +51,11 @@ WHERE {
 
 ##### Query for geographic hierarchy:
 ```
-SELECT ?partOf
+SELECT ?place ?placeName ?partOf ?partOfName
 WHERE {
-  <http://syriaca.org/place/78> dcterms:isPartOf ?partOf
+  ?place rdfs:label ?placeName ;
+    dcterms:isPartOf ?partOf .
+  ?partOf rdfs:label ?partOfName .
   }
 ```
 
