@@ -78,8 +78,7 @@ WHERE {
 ```
 SELECT DISTINCT *
 WHERE {
-  ?place a lawd:Place ;
-    rdfs:label ?name ;
+  ?place rdfs:label ?name ;
     skos:related ?related ;
     dcterms:relation ?relation ;
     dcterms:isPartOf ?isPartOf .
