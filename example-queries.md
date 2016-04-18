@@ -63,7 +63,7 @@ ORDER BY ?label
 ```
 
 
-##### Query for a related places and their names:
+##### Query for related places and their names:
 
 ```
 SELECT DISTINCT ?related ?relName
