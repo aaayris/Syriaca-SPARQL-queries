@@ -13,12 +13,14 @@ _Some things to remember:_
 
 ##### Query for properties and values:
 ```
-SELECT DISTINCT ?property ?value
+SELECT DISTINCT ?s ?place ?property ?value
 WHERE {
-  ?s ?property ?value .
+  ?s rdfs:label ?place ;
+    ?property ?value .
   }
 ```
 
+> This will return everything in the form of triples (subject, predicate, object) along with the human readable title, which will be in-between the subject and predicate.
 
 ##### Query for a place description:
 ```
