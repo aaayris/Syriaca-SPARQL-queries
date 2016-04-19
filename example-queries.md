@@ -6,7 +6,7 @@ _Some things to remember:_
 * Capitalization for query clauses (e.g. `SELECT`, `WHERE`, `CONSTRUCT`, etc.) is convention and _not_ required.
 * Adding or removing the `DISTINCT` clause can greatly affect the number of results.
 * Queries that are well formed but don't match any data will return empty (i.e. blank); there is no "no results" in SPARQL. (See "Query with optional bindings" below.)
-* Variables in SPARQL (e.g. `?WHERE`) are arbitrary and therefore meaningless to the machine. They are simply meant to assist the human reader. The question mark (`?`) is what matters to the machine. You could - for example - use `?WAFFLES` to query for `rdfs:label`.
+* Variables in SPARQL (e.g. `?where`) are arbitrary and therefore meaningless to the machine. They are simply meant to assist the human reader. The question mark (`?`) is what matters to the machine. You could - for example - use `?waffles` to query for `rdfs:label`.
 * Any query for data about a specific place can easily be transformed into a query about all places (and vice versa) simply by swapping out the URI (e.g. `<http://syriaca.org/place/78>`) for a variable (e.g. `?s`).
 * An `ASK` query is a helpful way to explore what's in an unfamiliar dataset. However, it simply returns either `true` or `false` depending on if the requested data is in the dataset; it does not say how many, where, or what kind are used.
 
